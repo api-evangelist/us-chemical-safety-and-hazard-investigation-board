@@ -1,0 +1,151 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "https://www.w3.org/ns/dcat#",
+    "csb": "https://www.csb.gov/",
+
+    "ChemicalIncident": {
+      "@id": "schema:Event",
+      "@type": "@id"
+    },
+    "Investigation": {
+      "@id": "schema:Observation",
+      "@type": "@id"
+    },
+    "SafetyRecommendation": {
+      "@id": "schema:Action",
+      "@type": "@id"
+    },
+    "ChemicalFacility": {
+      "@id": "schema:Organization",
+      "@type": "@id"
+    },
+    "HazardousChemical": {
+      "@id": "schema:Drug",
+      "@type": "@id"
+    },
+
+    "incidentId": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "incidentDate": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "incidentTime": {
+      "@id": "schema:startTime",
+      "@type": "xsd:time"
+    },
+    "facilityName": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "facilityLocation": {
+      "@id": "schema:location",
+      "@type": "@id"
+    },
+    "facilityType": {
+      "@id": "schema:additionalType",
+      "@type": "xsd:string"
+    },
+    "naicsCode": {
+      "@id": "schema:naics",
+      "@type": "xsd:string"
+    },
+    "incidentType": {
+      "@id": "schema:additionalType",
+      "@type": "xsd:string"
+    },
+    "chemicalsInvolved": {
+      "@id": "csb:chemicalsInvolved",
+      "@container": "@set"
+    },
+    "chemicalName": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "casNumber": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "schema:quantity",
+      "@type": "xsd:decimal"
+    },
+    "quantityUnit": {
+      "@id": "schema:unitCode",
+      "@type": "xsd:string"
+    },
+    "hazardClass": {
+      "@id": "schema:additionalType",
+      "@type": "xsd:string"
+    },
+    "fatalities": {
+      "@id": "csb:fatalities",
+      "@type": "xsd:integer"
+    },
+    "injuries": {
+      "@id": "csb:injuries",
+      "@type": "xsd:integer"
+    },
+    "evacuated": {
+      "@id": "csb:evacuated",
+      "@type": "xsd:integer"
+    },
+    "investigationStatus": {
+      "@id": "csb:investigationStatus",
+      "@type": "xsd:string"
+    },
+    "investigationReport": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "recommendations": {
+      "@id": "csb:recommendations",
+      "@container": "@set"
+    },
+    "recommendationNumber": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "recipientOrganization": {
+      "@id": "schema:recipient",
+      "@type": "xsd:string"
+    },
+    "rootCauses": {
+      "@id": "csb:rootCauses",
+      "@container": "@set"
+    },
+    "regulatoryNotifications": {
+      "@id": "csb:regulatoryNotifications",
+      "@container": "@set"
+    },
+    "issueDate": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:date"
+    },
+
+    "GovernmentOrganization": "schema:GovernmentOrganization",
+    "Dataset": "dcat:Dataset",
+    "publisher": {
+      "@id": "dct:publisher",
+      "@type": "@id"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "dct:title",
+      "@type": "xsd:string"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:date"
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "name": "CSB Chemical Incident",
+  "description": "The structure of a CSB chemical incident record, representing an accident investigated by or reported to the US Chemical Safety and Hazard Investigation Board",
+  "fields": [
+    {
+      "name": "incidentId",
+      "type": "string",
+      "description": "Unique CSB identifier for the incident",
+      "required": true
+    },
+    {
+      "name": "incidentDate",
+      "type": "date",
+      "description": "Date the incident occurred",
+      "required": true
+    },
+    {
+      "name": "incidentTime",
+      "type": "time",
+      "description": "Local time of incident",
+      "required": false
+    },
+    {
+      "name": "facilityName",
+      "type": "string",
+      "description": "Name of the industrial facility where incident occurred",
+      "required": true
+    },
+    {
+      "name": "facilityLocation",
+      "type": "object",
+      "description": "Geographic location of the facility",
+      "required": true,
+      "fields": [
+        {
+          "name": "address",
+          "type": "string",
+          "description": "Street address"
+        },
+        {
+          "name": "city",
+          "type": "string",
+          "description": "City",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "description": "US state abbreviation",
+          "required": true
+        },
+        {
+          "name": "zipCode",
+          "type": "string",
+          "description": "ZIP code"
+        },
+        {
+          "name": "latitude",
+          "type": "number",
+          "description": "Geographic latitude"
+        },
+        {
+          "name": "longitude",
+          "type": "number",
+          "description": "Geographic longitude"
+        }
+      ]
+    },
+    {
+      "name": "facilityType",
+      "type": "string",
+      "description": "Type of industrial facility (Chemical Plant, Refinery, etc.)",
+      "required": false
+    },
+    {
+      "name": "naicsCode",
+      "type": "string",
+      "description": "NAICS industry classification code",
+      "required": false
+    },
+    {
+      "name": "incidentType",
+      "type": "string",
+      "description": "Type of incident: Explosion, Fire, Chemical Release, Toxic Release, Reactive Incident",
+      "required": true
+    },
+    {
+      "name": "chemicalsInvolved",
+      "type": "array",
+      "description": "Hazardous chemicals involved in the incident",
+      "required": false,
+      "items": {
+        "name": "ChemicalInvolved",
+        "type": "object",
+        "fields": [
+          {
+            "name": "chemicalName",
+            "type": "string",
+            "description": "Common chemical name",
+            "required": true
+          },
+          {
+            "name": "casNumber",
+            "type": "string",
+            "description": "CAS registry number"
+          },
+          {
+            "name": "quantity",
+            "type": "number",
+            "description": "Estimated quantity released"
+          },
+          {
+            "name": "quantityUnit",
+            "type": "string",
+            "description": "Unit of measurement (pounds, gallons, tons)"
+          },
+          {
+            "name": "hazardClass",
+            "type": "string",
+            "description": "OSHA hazard class: Toxic, Flammable, Reactive, Corrosive, Explosive"
+          }
+        ]
+      }
+    },
+    {
+      "name": "casualties",
+      "type": "object",
+      "description": "Casualties resulting from the incident",
+      "required": false,
+      "fields": [
+        {
+          "name": "fatalities",
+          "type": "integer",
+          "description": "Number of fatalities"
+        },
+        {
+          "name": "injuries",
+          "type": "integer",
+          "description": "Number of injuries"
+        },
+        {
+          "name": "evacuated",
+          "type": "integer",
+          "description": "Number of people evacuated"
+        },
+        {
+          "name": "hospitalized",
+          "type": "integer",
+          "description": "Number hospitalized"
+        }
+      ]
+    },
+    {
+      "name": "investigationStatus",
+      "type": "string",
+      "description": "CSB investigation status: Current, Completed, No Investigation",
+      "required": false
+    },
+    {
+      "name": "investigationReport",
+      "type": "string",
+      "description": "URL to CSB investigation report",
+      "required": false
+    },
+    {
+      "name": "recommendations",
+      "type": "array",
+      "description": "Safety recommendations issued",
+      "required": false,
+      "items": {
+        "name": "Recommendation",
+        "type": "object",
+        "fields": [
+          {
+            "name": "recommendationNumber",
+            "type": "string",
+            "description": "CSB recommendation number",
+            "required": true
+          },
+          {
+            "name": "recipientOrganization",
+            "type": "string",
+            "description": "Recipient organization (OSHA, EPA, facility)"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "description": "Recommendation text",
+            "required": true
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "description": "Status: Open or Closed"
+          },
+          {
+            "name": "issueDate",
+            "type": "date",
+            "description": "Date recommendation issued"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rootCauses",
+      "type": "array",
+      "description": "Root causes identified by CSB investigation",
+      "required": false,
+      "items": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "regulatoryNotifications",
+      "type": "array",
+      "description": "Regulatory agencies notified of the incident",
+      "required": false,
+      "items": {
+        "type": "string"
+      }
+    }
+  ]
+}

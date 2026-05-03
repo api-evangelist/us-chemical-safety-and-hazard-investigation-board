@@ -1,0 +1,152 @@
+vocabulary:
+  name: US Chemical Safety and Hazard Investigation Board Vocabulary
+  description: >-
+    Domain vocabulary for the US Chemical Safety and Hazard Investigation Board
+    (CSB), covering chemical incident investigation terminology, process safety
+    concepts, hazardous materials classification, regulatory frameworks, and
+    root cause analysis methodology used in CSB investigations.
+  version: '1.0'
+  created: '2026-05-03'
+  modified: '2026-05-03'
+  tags:
+    - Federal Government
+    - Chemical Safety
+    - Process Safety
+    - Incident Investigation
+
+terms:
+  - term: Chemical Safety Board (CSB)
+    abbreviation: CSB
+    definition: >-
+      The US Chemical Safety and Hazard Investigation Board, an independent
+      federal agency established by the Clean Air Act Amendments of 1990.
+      The CSB investigates industrial chemical accidents to identify root
+      causes and issue safety recommendations. Unlike OSHA or EPA, CSB does
+      not regulate industries or issue fines.
+
+  - term: Accidental Release Reporting Rule
+    definition: >-
+      A federal rule requiring facilities that release hazardous substances
+      above certain thresholds to report those releases to the CSB. Effective
+      March 2020, the rule enables the CSB to compile incident data and
+      publish periodic reports on chemical releases across US industry.
+
+  - term: Root Cause Analysis
+    abbreviation: RCA
+    definition: >-
+      A systematic investigation method used by the CSB to identify the
+      fundamental causes of a chemical accident. Root causes typically involve
+      safety management system failures, organizational factors, or systemic
+      deficiencies beyond the immediate triggering event.
+
+  - term: Safety Recommendation
+    definition: >-
+      A formal CSB recommendation directed to a specific organization (industry,
+      regulatory agency, trade association) to take action to prevent future
+      similar accidents. The CSB tracks recommendation status as Open or Closed
+      and has issued over 1,000 recommendations since its founding.
+
+  - term: Covered Accident
+    definition: >-
+      An accidental chemical release that meets the criteria under the
+      Accidental Release Reporting Rule, requiring mandatory notification
+      to the CSB within 8 hours of the incident.
+
+  - term: Process Hazard Analysis (PHA)
+    abbreviation: PHA
+    definition: >-
+      A systematic examination of the potential hazards associated with
+      a process, used in process safety management to identify and mitigate
+      risks of accidental releases and explosions.
+
+  - term: Process Safety Management (PSM)
+    abbreviation: PSM
+    definition: >-
+      An OSHA standard (29 CFR 1910.119) requiring facilities that handle
+      highly hazardous chemicals above threshold quantities to implement
+      comprehensive process safety programs. Many CSB investigations identify
+      PSM compliance failures as contributing factors.
+
+  - term: Risk Management Program (RMP)
+    abbreviation: RMP
+    definition: >-
+      An EPA regulation (40 CFR Part 68) requiring facilities that use
+      extremely hazardous substances to develop and implement risk management
+      programs and submit risk management plans. Often cited in CSB
+      investigations alongside PSM findings.
+
+  - term: BLEVE
+    abbreviation: BLEVE
+    definition: >-
+      Boiling Liquid Expanding Vapor Explosion. A type of explosion resulting
+      from the rapid vaporization of a liquid inside a pressurized vessel when
+      it is exposed to an external flame. BLEVEs have been investigated by
+      the CSB in several major incidents.
+
+  - term: Dust Explosion
+    definition: >-
+      An explosion caused by rapid combustion of fine particles suspended in
+      air. Combustible dust explosions have been a significant focus of CSB
+      investigations, leading to the Sugar Dust Explosion and other major
+      investigation reports.
+
+  - term: Reactive Chemical Hazard
+    definition: >-
+      A hazard arising from chemicals that can undergo uncontrolled exothermic
+      reactions, decomposition, or polymerization. The CSB has issued guidance
+      on reactive hazard management following several major reactive incidents.
+
+  - term: Inherently Safer Design
+    abbreviation: ISD
+    definition: >-
+      An approach to process safety that eliminates or reduces hazards at their
+      source rather than managing them through controls. The CSB frequently
+      recommends inherently safer design approaches in its investigation reports.
+
+  - term: Safety Culture
+    definition: >-
+      The collective values, beliefs, and behaviors of an organization regarding
+      the management of safety. CSB investigations often identify poor safety
+      culture as a systemic root cause contributing to chemical accidents.
+
+  - term: Layers of Protection Analysis (LOPA)
+    abbreviation: LOPA
+    definition: >-
+      A semi-quantitative risk assessment method that evaluates the adequacy
+      of safeguards or protection layers to reduce chemical process risks.
+
+  - term: Hydrofluoric Acid (HF)
+    abbreviation: HF
+    definition: >-
+      An extremely hazardous substance used in petroleum refining and
+      industrial processes. The CSB has investigated multiple HF releases
+      and issued recommendations regarding HF alkylation unit safety.
+
+  - term: Natural Gas Liquid (NGL)
+    abbreviation: NGL
+    definition: >-
+      Hydrocarbons extracted from natural gas, including ethane, propane,
+      butane, and pentane. NGL-related explosions and fires have been
+      subjects of several CSB investigations.
+
+investigation_types:
+  - name: Full Investigation
+    description: Comprehensive investigation with full accident reconstruction, root cause analysis, and formal safety recommendations
+  - name: Safety Bulletin
+    description: Shorter report on specific safety issues or lessons learned without a full investigation
+  - name: Case Study
+    description: Documentation of an incident illustrating important safety lessons
+  - name: Incident Report Summary
+    description: Summary of incidents reported under the Accidental Release Reporting Rule
+
+recommendation_statuses:
+  - status: Open - Awaiting Response
+    description: Recommendation issued but no response received from recipient
+  - status: Open - Response Received, Evaluation Ongoing
+    description: Recipient has responded and CSB is evaluating adequacy
+  - status: Closed - Acceptable Action Taken
+    description: Recipient took satisfactory action to implement recommendation
+  - status: Closed - Unacceptable Action or No Action
+    description: Recipient declined or took inadequate action
+  - status: Closed - No Longer Applicable
+    description: Recommendation no longer applicable due to changed circumstances

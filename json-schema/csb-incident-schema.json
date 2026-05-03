@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/main/json-schema/csb-incident-schema.json",
+  "title": "CSB Chemical Incident",
+  "description": "JSON Schema representing a chemical incident reported to or investigated by the US Chemical Safety and Hazard Investigation Board (CSB), including accidental releases reported under the Accidental Release Reporting Rule.",
+  "type": "object",
+  "properties": {
+    "incidentId": {
+      "type": "string",
+      "description": "Unique identifier for the incident",
+      "examples": ["CSB-2023-001", "2023-01-I-TX-0001"]
+    },
+    "incidentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the incident occurred",
+      "examples": ["2023-04-15"]
+    },
+    "incidentTime": {
+      "type": "string",
+      "format": "time",
+      "description": "Time the incident occurred (local time)",
+      "examples": ["14:30:00"]
+    },
+    "facilityName": {
+      "type": "string",
+      "description": "Name of the facility where the incident occurred",
+      "examples": ["Acme Chemical Plant", "XYZ Refinery"]
+    },
+    "facilityLocation": {
+      "$ref": "#/$defs/Location"
+    },
+    "facilityType": {
+      "type": "string",
+      "description": "Type of industrial facility",
+      "examples": ["Chemical Plant", "Oil Refinery", "Petrochemical Facility", "Fertilizer Plant", "Water Treatment Plant"]
+    },
+    "naicsCode": {
+      "type": "string",
+      "description": "NAICS industry classification code for the facility",
+      "examples": ["325110", "324110"]
+    },
+    "incidentType": {
+      "type": "string",
+      "description": "Primary type of incident",
+      "enum": [
+        "Explosion",
+        "Fire",
+        "Chemical Release",
+        "Toxic Release",
+        "Reactive Incident",
+        "Multiple Causes"
+      ]
+    },
+    "chemicalsInvolved": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ChemicalInvolved"
+      },
+      "description": "List of hazardous chemicals involved in the incident"
+    },
+    "casualties": {
+      "$ref": "#/$defs/Casualties"
+    },
+    "investigationStatus": {
+      "type": "string",
+      "description": "Current status of CSB investigation",
+      "enum": [
+        "Current",
+        "Completed",
+        "No Investigation"
+      ]
+    },
+    "investigationReport": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the CSB investigation report if available",
+      "examples": ["https://www.csb.gov/investigations/completed-investigations/"]
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Recommendation"
+      },
+      "description": "Safety recommendations issued as a result of this incident"
+    },
+    "rootCauses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Root causes identified by CSB investigation"
+    },
+    "regulatoryNotifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Regulatory agencies notified (EPA, OSHA, state agencies)"
+    }
+  },
+  "required": ["incidentId", "incidentDate", "facilityName", "incidentType"],
+  "$defs": {
+    "Location": {
+      "title": "Location",
+      "description": "Geographic location of the incident",
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "Street address of the facility"
+        },
+        "city": {
+          "type": "string",
+          "description": "City where the incident occurred"
+        },
+        "state": {
+          "type": "string",
+          "description": "US state abbreviation",
+          "examples": ["TX", "LA", "WV", "CA"]
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "ZIP code",
+          "pattern": "^\\d{5}(-\\d{4})?$"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Geographic latitude",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Geographic longitude",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": ["city", "state"]
+    },
+    "ChemicalInvolved": {
+      "title": "Chemical Involved",
+      "description": "A chemical involved in an incident",
+      "type": "object",
+      "properties": {
+        "chemicalName": {
+          "type": "string",
+          "description": "Common name of the chemical",
+          "examples": ["Chlorine", "Anhydrous Ammonia", "Hydrogen Sulfide", "Methanol"]
+        },
+        "casNumber": {
+          "type": "string",
+          "description": "Chemical Abstracts Service (CAS) registry number",
+          "pattern": "^\\d{2,7}-\\d{2}-\\d$",
+          "examples": ["7782-50-5", "7664-41-7"]
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Estimated quantity released"
+        },
+        "quantityUnit": {
+          "type": "string",
+          "description": "Unit of measure for released quantity",
+          "examples": ["pounds", "gallons", "tons", "kg"]
+        },
+        "hazardClass": {
+          "type": "string",
+          "description": "OSHA hazard classification",
+          "examples": ["Toxic", "Flammable", "Reactive", "Corrosive", "Explosive"]
+        }
+      },
+      "required": ["chemicalName"]
+    },
+    "Casualties": {
+      "title": "Casualties",
+      "description": "Injury and fatality counts for an incident",
+      "type": "object",
+      "properties": {
+        "fatalities": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of fatalities"
+        },
+        "injuries": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of injuries requiring medical treatment"
+        },
+        "evacuated": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of persons evacuated"
+        },
+        "hospitalized": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of persons hospitalized"
+        }
+      }
+    },
+    "Recommendation": {
+      "title": "Safety Recommendation",
+      "description": "A CSB safety recommendation issued following an investigation",
+      "type": "object",
+      "properties": {
+        "recommendationNumber": {
+          "type": "string",
+          "description": "CSB recommendation number",
+          "examples": ["2023-01-I-TX-R1"]
+        },
+        "recipientOrganization": {
+          "type": "string",
+          "description": "Organization to which the recommendation is directed",
+          "examples": ["OSHA", "EPA", "Facility Name", "Industry Association"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Text of the safety recommendation"
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the recommendation",
+          "enum": [
+            "Open",
+            "Closed - Acceptable Action",
+            "Closed - Unacceptable Action",
+            "Closed - No Response",
+            "Closed - Superseded"
+          ]
+        },
+        "issueDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date recommendation was issued"
+        }
+      },
+      "required": ["recommendationNumber", "description"]
+    }
+  }
+}
