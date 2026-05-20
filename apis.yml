@@ -26,6 +26,9 @@ modified: '2026-05-03'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/refs/heads/main/apis.yml
 specificationVersion: '0.19'
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/united-states-chemical-safety-and-hazard-investigation-board
 apis:
   - aid: us-chemical-safety-and-hazard-investigation-board:us-chemical-safety-and-hazard-investigation-board
     name: US Chemical Safety and Hazard Investigation Board
