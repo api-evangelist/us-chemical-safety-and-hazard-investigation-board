@@ -27,6 +27,8 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 common:
+  - type: DomainSecurity
+    url: security/us-chemical-safety-and-hazard-investigation-board-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/united-states-chemical-safety-and-hazard-investigation-board
 apis:
