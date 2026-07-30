@@ -11,9 +11,21 @@ description: >-
   the CSB makes incident data available through its website and periodic compiled reports
   under its Accidental Release Reporting Rule transparency initiative.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/us-chemical-safety-and-hazard-investigation-board.png
 tags:
   - Federal Government
   - Chemical Safety
