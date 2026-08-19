@@ -37,7 +37,7 @@ created: '2024-12-03'
 modified: '2026-05-03'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 common:
   - type: DomainSecurity
     url: security/us-chemical-safety-and-hazard-investigation-board-domain-security.yml
