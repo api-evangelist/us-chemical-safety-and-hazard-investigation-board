@@ -38,7 +38,7 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/us-chemical-safety-and-hazard-investigation-board.png
 tags:
-  - Federal-Government
+  - Federal Government
   - Chemical Safety
   - Incident Investigation
   - Hazardous Materials
@@ -51,6 +51,7 @@ tags_raw:
   - Hazardous Materials
   - Public Safety
   - Environmental Safety
+  - Federal-Government
 created: '2024-12-03'
 modified: '2026-05-03'
 url: >-
@@ -73,7 +74,7 @@ apis:
       1,000 safety recommendations issued to industry and regulatory agencies.
     humanURL: https://www.csb.gov
     tags:
-      - Federal-Government
+      - Federal Government
       - Chemical Safety
       - Incident Investigation
       - Hazardous Materials
@@ -86,6 +87,7 @@ apis:
       - Hazardous Materials
       - Public Safety
       - Environmental Safety
+      - Federal-Government
     properties:
       - type: Documentation
         url: https://www.csb.gov
