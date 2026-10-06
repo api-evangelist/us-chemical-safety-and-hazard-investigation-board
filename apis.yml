@@ -53,11 +53,13 @@ tags_raw:
   - Environmental Safety
   - Federal-Government
 created: '2024-12-03'
-modified: '2026-05-03'
+modified: '2026-10-06'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 common:
+  - url: https://www.csb.gov/news/
+    type: Blog
   - type: DomainSecurity
     url: security/us-chemical-safety-and-hazard-investigation-board-domain-security.yml
   - type: LinkedIn
