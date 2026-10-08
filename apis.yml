@@ -58,6 +58,12 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/us-chemical-safety-and-hazard-investigation-board/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 common:
+  - type: Plans
+    url: plans/us-chemical-safety-and-hazard-investigation-board-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/us-chemical-safety-and-hazard-investigation-board-rate-limits.yml
+  - type: FinOps
+    url: finops/us-chemical-safety-and-hazard-investigation-board-finops.yml
   - url: https://www.csb.gov/news/
     type: Blog
   - type: DomainSecurity
